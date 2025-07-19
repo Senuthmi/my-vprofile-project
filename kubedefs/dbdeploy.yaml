@@ -38,5 +38,6 @@ spec:
                   key: db-pass
       volumes:
         - name: vpro-db-data
-          persistentVolumeClaim:
-            claimName: db-pv-claim
+          hostPath:
+            path: /data/db
+            type: DirectoryOrCreate
