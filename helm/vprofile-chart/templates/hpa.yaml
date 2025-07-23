@@ -2,15 +2,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "vprofile-chart.fullname" . }}
+  name: vproapp
   namespace: {{ .Release.Namespace }}  # ✅ Add this line
   labels:
-    {{- include "vprofile-chart.labels" . | nindent 4 }}
+    app: vproapp
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "vprofile-chart.fullname" . }}
+    name: vproapp
   minReplicas: {{ .Values.hpa.minReplicas }}
   maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:
