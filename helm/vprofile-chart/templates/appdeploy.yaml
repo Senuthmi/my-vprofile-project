@@ -22,6 +22,11 @@ spec:
         ports:
         - name: vproapp-port
           containerPort: 8080
+        resources:
+          requests:
+            cpu: 100m           # minimum guaranteed CPU
+          limits:
+            cpu: 200m           # maximum allowed CPU          
       initContainers:
       - name: init-mydb
         image: busybox
