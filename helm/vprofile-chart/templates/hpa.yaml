@@ -5,7 +5,7 @@ metadata:
   name: vproapp-hpa
   namespace: {{ .Release.Namespace }}  # ✅ Add this line
   labels:
-    app: vproapp-hpa
+    app: vproapp
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
