@@ -3,6 +3,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "vprofile-chart.fullname" . }}
+  namespace: {{ .Release.Namespace }}  # ✅ Add this line
   labels:
     {{- include "vprofile-chart.labels" . | nindent 4 }}
 spec:
@@ -20,5 +21,3 @@ spec:
           type: Utilization
           averageUtilization: {{ .Values.hpa.targetCPUUtilizationPercentage }}
 {{- end }}
-
-
