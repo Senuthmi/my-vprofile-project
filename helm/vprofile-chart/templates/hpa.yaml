@@ -2,10 +2,10 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: vproapp
+  name: vproapp-hpa
   namespace: {{ .Release.Namespace }}  # ✅ Add this line
   labels:
-    app: vproapp
+    app: vproapp-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
