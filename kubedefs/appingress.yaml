@@ -5,7 +5,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "false" 
- 
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"    
 spec:
   ingressClassName: nginx
@@ -22,3 +21,4 @@ spec:
               number: 8080
 
               
+
