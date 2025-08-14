@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: vproapp
   labels: 
-    app: vproapp
-    
+    app: vproapp   
 spec:
   replicas: 1
   selector:
@@ -32,4 +31,5 @@ spec:
       - name: init-rabbitmq
         image: busybox
         command: ['sh', '-c', 'until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done;']
+
 
